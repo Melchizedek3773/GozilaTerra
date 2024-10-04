@@ -41,7 +41,9 @@ public class TerrainTerraforming : MonoBehaviour
         {
             if (Vector2.Distance( new Vector2(vert.x, vert.z), new Vector2(pos.x, pos.z)) <= range )
             {
-                _vertices[a] = vert + new Vector3(0, height, 0);
+                float currentH = vert.y;
+                if (currentH < height)
+                    _vertices[a] = vert + new Vector3(0, height, 0);
             }
             a++;
         }

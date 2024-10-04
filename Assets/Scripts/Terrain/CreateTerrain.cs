@@ -33,7 +33,7 @@ public class CreateTerrain : MonoBehaviour
     }
     private void Update()
     {
-        //CreateTerrainMesh();
+        CreateTerrainMesh();
         GradientToTexture();
         
         float minTerrainHeight = _mesh.bounds.min.y + transform.position.y - 0.1f;
