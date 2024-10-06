@@ -82,7 +82,6 @@ namespace MyTerrain
             _meshFilter.mesh = _mesh;
             _mesh.RecalculateBounds();
             _mesh.RecalculateNormals();
-            
             _meshCollider.sharedMesh = _mesh;
         }
         private void TerraformTerrainDown(Vector3 pos, float height, float range)
@@ -133,7 +132,6 @@ namespace MyTerrain
             _meshFilter.mesh = _mesh;
             _mesh.RecalculateBounds();
             _mesh.RecalculateNormals();
-            
             _meshCollider.sharedMesh = _mesh;
         }
     

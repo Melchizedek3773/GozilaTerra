@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace MyTerrain
@@ -29,11 +28,20 @@ namespace MyTerrain
             CreateMesh();
             
             _meshCollider.sharedMesh = _mesh;
+            
+            // Uv
+            Vector2[] uvs = new Vector2[_vertices.Length];
+
+            for (int i = 0; i < uvs.Length; i++)
+            {
+                uvs[i] = new Vector2(_vertices[i].x, _vertices[i].z);
+            }
+            _mesh.uv = uvs;
         }
 
         void Update()
         {
-            GradientToTexture();
+            /*GradientToTexture();
             
             float minTerrainHeight = _mesh.bounds.min.y + transform.position.y - 0.1f;
             float maxTerrainHeight = _mesh.bounds.max.y + transform.position.y + 0.1f;
@@ -41,7 +49,7 @@ namespace MyTerrain
             mat.SetTexture("terrainGradient", _gradientTexture);
         
             mat.SetFloat("minTerrainHeight", -3.1f);
-            mat.SetFloat("maxTerrainHeight", 3.1f);  
+            mat.SetFloat("maxTerrainHeight", 3.1f);  */
         }
         private void GradientToTexture()
         {
@@ -117,6 +125,7 @@ namespace MyTerrain
             _mesh.SetVertices(_vertices);
             _mesh.SetTriangles(_triangles, 0);
             _mesh.RecalculateNormals();
+            
             _meshCollider.sharedMesh = _mesh;
         }
     
