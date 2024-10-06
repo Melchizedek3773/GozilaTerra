@@ -19,10 +19,10 @@ namespace MyTerrain
         MeshCollider _meshCollider;
         void Awake()
         {
-            _meshCollider = GetComponent<MeshCollider>();
             _mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = _mesh;
             _mesh.name = "Terrain";
+            _meshCollider = GetComponent<MeshCollider>();
             
             ContiguousProceduralGrid();
             CreateMesh();
@@ -41,7 +41,7 @@ namespace MyTerrain
 
         void Update()
         {
-            /*GradientToTexture();
+            GradientToTexture();
             
             float minTerrainHeight = _mesh.bounds.min.y + transform.position.y - 0.1f;
             float maxTerrainHeight = _mesh.bounds.max.y + transform.position.y + 0.1f;
@@ -49,7 +49,7 @@ namespace MyTerrain
             mat.SetTexture("terrainGradient", _gradientTexture);
         
             mat.SetFloat("minTerrainHeight", -3.1f);
-            mat.SetFloat("maxTerrainHeight", 3.1f);  */
+            mat.SetFloat("maxTerrainHeight", 3.1f);
         }
         private void GradientToTexture()
         {

@@ -12,6 +12,8 @@ namespace MyTerrain
         
         private MeshFilter _meshFilter;
         private MeshCollider _meshCollider;
+        
+        public Transform DotTransformransform;
         void Start()
         {
             _meshFilter = GetComponent<MeshFilter>();
