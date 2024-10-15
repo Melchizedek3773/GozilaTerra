@@ -13,13 +13,12 @@ namespace MyTerrain
         private MeshFilter _meshFilter;
         private MeshCollider _meshCollider;
         
-        public Transform DotTransformransform;
         void Start()
         {
             _meshFilter = GetComponent<MeshFilter>();
             _meshCollider = GetComponent<MeshCollider>();
         }
-        void FixedUpdate()
+        void Update()
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -36,6 +35,7 @@ namespace MyTerrain
         // Терраформинг
         private Mesh _mesh;
         private Vector3[] _vertices;
+        
         private void TerraformTerrain(Vector3 pos, float height, float range)
         {
             _mesh = _meshFilter.sharedMesh;
@@ -81,8 +81,6 @@ namespace MyTerrain
                 a++;
             }
             _mesh.SetVertices(_vertices);
-            _meshFilter.mesh = _mesh;
-            _mesh.RecalculateBounds();
             _mesh.RecalculateNormals();
             _meshCollider.sharedMesh = _mesh;
         }
@@ -131,11 +129,8 @@ namespace MyTerrain
                 a++;
             }
             _mesh.SetVertices(_vertices);
-            _meshFilter.mesh = _mesh;
-            _mesh.RecalculateBounds();
             _mesh.RecalculateNormals();
             _meshCollider.sharedMesh = _mesh;
         }
-    
     }
 }

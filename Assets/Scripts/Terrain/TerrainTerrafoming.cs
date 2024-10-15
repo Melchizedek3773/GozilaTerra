@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Terrain
+namespace MyTerrain
 {
     public class TerrainTerraforming : MonoBehaviour
     {

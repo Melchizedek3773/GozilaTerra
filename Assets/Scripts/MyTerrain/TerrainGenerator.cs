@@ -45,7 +45,7 @@ namespace MyTerrain
             
             float minTerrainHeight = _mesh.bounds.min.y + transform.position.y - 0.1f;
             float maxTerrainHeight = _mesh.bounds.max.y + transform.position.y + 0.1f;
-        
+            
             mat.SetTexture("terrainGradient", _gradientTexture);
         
             mat.SetFloat("minTerrainHeight", -3.1f);
